@@ -73,12 +73,15 @@ architecture top_basys3_arch of top_basys3 is
 begin
 	-- PORT MAPS --------------------
 	ripple_adder_uut : ripple_adder port map (
-        led(3 downto 0) <= w_sum;
-        led(15) <= w_Cout;
+	    S => led(3 downto 1),
+	    Cout => led(15),
+	   
+--        led(3 downto 0) <= w_sum;
+--        led(15) <= w_Cout;
     
-        A => sw(4 downto 1);
-        B => sw(15 downto 12);
-        Cin => sw(0);
+        A => sw(4 downto 1),
+        B => sw(15 downto 12),
+        Cin => sw(0)
 	);
     
     
