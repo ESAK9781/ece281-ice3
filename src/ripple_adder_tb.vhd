@@ -24,7 +24,8 @@ architecture test_bench of ripple_adder_tb is
 	-- declare signals needed to stimulate the UUT inputs
 	signal w_addends     : std_logic_vector(7 downto 0) := x"00"; -- the numbers being added
 	signal w_sum         : std_logic_vector(3 downto 0) := x"0";
-	signal w_Cin, w_Cout : std_logic;
+	signal w_Cin : std_logic := '0';
+	signal w_Cout : std_logic := '0';
 
 begin
 	-- PORT MAPS ----------------------------------------
@@ -48,7 +49,10 @@ begin
        -- Test all ones input
        w_addends <= x"FF"; w_Cin <= '1'; wait for 10 ns;
 	       assert (w_sum = x"F" and w_Cout = '1') report "bad with ones" severity failure;
-       -- TODO, a few other test cases
+	   w_addends <= x"F1"; w_Cin <= '0'; wait for 10 ns;
+	       assert (w_sum = x"0" and w_Cout = '1') report "bad with carry case 1" severity failure;
+       w_addends <= x"2F"; w_Cin <= '1'; wait for 10 ns;
+	       assert (w_sum = x"2" and w_Cout = '1') report "bad with carry case 2" severity failure;
 	
 		wait; -- wait forever
 	end process;	
