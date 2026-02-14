@@ -1,0 +1,38 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Feb 13 13:18:54 2026
+# Process ID         : 14864
+# Current directory  : C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent32624 C:\Users\C28Elijah.Sakamoto\faaaaaah\ICE3\ice\ripple_adder.xpr
+# Log file           : C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice/vivado.log
+# Journal file       : C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice\vivado.jou
+# Running On         : C28-2TK41601VZ
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 PRO 7840U w/ Radeon 780M Graphics  
+# CPU Frequency      : 3294 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 33585 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 38685 MB
+# Available Virtual  : 9431 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice/ripple_adder.xpr
+update_compile_order -fileset sources_1
+
+launch_simulation
+source ripple_adder_tb.tcl
+remove_bps -file {C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice/src/ripple_adder_tb.vhd} -line 46
+add_bp {C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice/src/ripple_adder_tb.vhd} 47
+remove_bps -file {C:/Users/C28Elijah.Sakamoto/faaaaaah/ICE3/ice/src/ripple_adder_tb.vhd} -line 47
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+source ripple_adder_tb.tcl
+close_sim
